@@ -1,0 +1,29 @@
+@import "src/sources/styles/mixins";
+@import "src/sources/styles/variables";
+
+.header{
+  @include flex($align: center, $justify: space-between);
+  margin: 0 44px;
+  margin-top: 24px;
+}
+.menu {
+  display: flex;
+}
+.menuItem{
+  @include textStyle($family: $titleFont, $weight: 400, $size:16px, $height: 18px);
+  text-transform: uppercase;
+}
+.menuItem:not(:last-child){
+  margin-right: 40px;
+}
+.btn{
+  @include textStyle($size:16px, $weight: 400, $family: $titleFont, $height: 18px);
+  text-transform: uppercase;
+  width: 156px;
+  height: 40px;
+  padding: 11px 0;
+  border: 1px solid #FFFFFF;
+  //box-sizing: border-box;
+  border-radius: 61px;
+  background-color: transparent;
+}

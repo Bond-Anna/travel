@@ -1,0 +1,19 @@
+@import "src/sources/styles/mixins";
+@import "src/sources/styles/variables";
+
+.title{
+  @include textStyle($family: $titleFont, $weight: 400, $size:60px, $height: 58px);
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 37px;
+}
+.container {
+  width: 1110px;
+  margin: auto;
+}
+.cards{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}

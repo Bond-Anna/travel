@@ -1,0 +1,46 @@
+@import "src/sources/styles/mixins";
+@import "src/sources/styles/variables";
+
+.cardBlock {
+  @include flex-direction($direction: column);
+  align-items: center;
+  width: 540px;
+  height: 478px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.wrapper {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardTitle {
+  @include position-absolute-center;
+  @include textStyle($family: $titleFont, $weight: 400, $size: 44px, $height: 43.34px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cardText {
+  @include textStyle($family: $textFont, $weight: 400, $size: 18px, $height: 36px);
+  text-align: center;
+  max-width: 410px;
+  margin-top: 30px;
+}
+
+.cardBtn {
+  @include textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  width: 254px;
+  height: 55px;
+  margin-top: 42px;
+  color: #fff;
+  background: #0C0B10;
+  border-radius: 74px;
+}
