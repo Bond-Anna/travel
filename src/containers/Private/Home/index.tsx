@@ -2,14 +2,17 @@ import React, {FC} from 'react';
 import Header from "./Header";
 import Card from "./Card";
 import Subscribe from "./Subscribe";
+import Footer from "./Footer";
+//imgs
 import Img1 from '../../../sources/cargImgs/card1.png';
 import Img2 from '../../../sources/cargImgs/card2.png';
 import Img3 from '../../../sources/cargImgs/card3.png';
 import Img4 from '../../../sources/cargImgs/card4.png';
 import Img5 from '../../../sources/cargImgs/card5.png';
 import Img6 from '../../../sources/cargImgs/card6.png';
-
+//styles
 import st from './home.module.scss'
+
 
 const Home: FC = () => {
     const data = [
@@ -61,6 +64,7 @@ const Home: FC = () => {
                     )}
                 </div>
                 <Subscribe/>
+                <Footer/>
             </div>
         </div>
     );

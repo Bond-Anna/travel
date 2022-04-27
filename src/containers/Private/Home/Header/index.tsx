@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../../../../sources/common/Logo'
+import ButtonCallMe from "../../../../sources/common/callMeDecor/buttonCallMe";
 //styles
 import st from './header.module.scss'
 
@@ -15,7 +16,7 @@ const Header: React.FC = () => {
                 <li className={st.menuItem}>Contact</li>
                 <li className={st.menuItem}>Client Area</li>
             </ul>
-            <button className={st.btn}>Call Me Back</button>
+            <ButtonCallMe/>
         </div>
     );
 };

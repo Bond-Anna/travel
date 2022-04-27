@@ -15,7 +15,7 @@ const Card = ({src, title, text}: Props) => {
                 <p className={st.cardTitle}>{title}</p>
             </div>
             <p className={st.cardText}>{text}</p>
-            <button className={st.cardBtn}>Make A Request</button>
+            <button type='button' className={st.cardBtn}>Make A Request</button>
         </div>
     );
 };

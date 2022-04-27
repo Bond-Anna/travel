@@ -1,0 +1,47 @@
+@import "src/sources/styles/mixins";
+@import "src/sources/styles/variables";
+
+.footer {
+  margin-top: 96px;
+  padding-bottom: 34px;
+  text-align: center;
+
+  &Menu{
+    @include textStyle($family: $titleFont, $weight: 400, $size:16px, $height: 18px);
+    text-transform: uppercase;
+    @include flex($align: center, $justify: center);
+    margin-top: 80px;
+    margin-bottom: 106px;
+
+    svg {
+      margin: 0 55px;
+    }
+  }
+}
+.blockMenu{
+  display: flex;
+}
+.blockMenu p:first-child{
+  margin-right: 60px;
+}
+//.footerBtn{
+//  @include textStyle($family: $titleFont, $weight: 400, $size:16px, $height: 18px);
+//  text-transform: uppercase;
+//  width: 156px;
+//  height: 40px;
+//  margin: 0 55px;
+//  border: 1px solid #FFFFFF;
+//  border-radius: 61px;
+//  background: transparent;
+//}
+.logoSizes{
+  width: 215px;
+  height: auto;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  @include textStyle($family: $textFont, $weight: 400, $size:12px, $height: 16px);
+  color: #FFFFFF;
+}

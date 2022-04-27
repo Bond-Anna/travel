@@ -1,0 +1,24 @@
+.wrapper {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+}
+
+.top {
+  position: absolute;
+  top: -21px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub {
+}
+
+.bot {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
