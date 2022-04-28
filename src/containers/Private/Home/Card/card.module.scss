@@ -4,7 +4,8 @@
 .cardBlock {
   @include flex-direction($direction: column);
   align-items: center;
-  width: 540px;
+  min-width: 344px;
+  max-width: 540px;
   height: 478px;
   background: #ffffff;
   border-radius: 10px;
@@ -15,6 +16,10 @@
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 }
 
 .cardTitle {

@@ -1,14 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Logo from '../../../../sources/common/Logo'
-import CallMeDecor from 'sources/common/callMeDecor'
-//styles
+import CallMeDecor from '../../../../sources/common/callMeDecor'
+// mob
+import Burger from 'sources/common/BurgerIcon'
+//styless
 import st from './header.module.scss'
 
 const Header: React.FC = () => {
   return (
     <div className={st.header}>
-      <Logo />
+      <NavLink to="/" className={st.logo}>
+        <Logo />
+      </NavLink>
       <ul className={st.menu}>
         <li className={st.menuItem}>
           <NavLink to="#">Home</NavLink>
@@ -30,9 +34,12 @@ const Header: React.FC = () => {
         </li>
       </ul>
       <button className={st.btn}>
-        Call Me Back
+        Call Me<span className={st.btnText}> Back</span>
         <CallMeDecor />
       </button>
+      <span className={st.burger}>
+        <Burger />
+      </span>
     </div>
   )
 }

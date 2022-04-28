@@ -3,16 +3,19 @@
 
 .header {
   @include flex($align: center, $justify: space-between);
-  max-width: 1348px;
+  max-width: 1378px;
   margin: auto;
+  padding: 0 15px;
   padding-top: 24px;
 }
 .menu {
   display: flex;
+  margin: 0 15px;
 }
 .menuItem {
   @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
   text-transform: uppercase;
+  padding: 10px 0;
 }
 .menuItem:not(:last-child) {
   margin-right: 40px;
@@ -21,6 +24,8 @@
   position: relative;
   @include textStyle($size: 16px, $weight: 400, $family: $titleFont, $height: 18px);
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+
   width: 156px;
   height: 40px;
   padding: 11px 0;
@@ -31,5 +36,54 @@
   > div {
     position: absolute;
     top: 0;
+  }
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .menuItem:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .menu {
+    display: none;
+  }
+  .logo {
+    order: 1;
+  }
+  .btn {
+    order: 0;
+  }
+  .burger {
+    display: flex;
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    svg {
+      width: 75px;
+      height: auto;
+    }
+  }
+
+  .btn {
+    @include flex($align: center, $justify: center);
+    width: 88px;
+    height: 36px;
+    border: 1px solid #fff;
+
+    &Text {
+      display: none;
+    }
+
+    > div {
+      display: none;
+    }
   }
 }

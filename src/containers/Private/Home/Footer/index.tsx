@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
+import classNames from 'classnames'
 import Logo from '../../../../sources/common/Logo'
 import CallMeDecor from '../../../../sources/common/callMeDecor'
 import st from './footer.module.scss'
@@ -7,7 +8,9 @@ import st from './footer.module.scss'
 const Footer: FC = () => {
   return (
     <div className={st.footer}>
-      <Logo style={st.logoSizes} />
+      <NavLink to="/">
+        <Logo style={st.logoSizes} />
+      </NavLink>
 
       <div className={st.footerMenu}>
         <div className={st.blockMenu}>
@@ -42,7 +45,7 @@ const Footer: FC = () => {
             </p>
           </NavLink>
           <NavLink to="#">
-            <p className={st.blockMenuItem}>
+            <p className={classNames(st.blockMenuItem, st.lastEl)}>
               Contact
               <span>
                 <CallMeDecor />
