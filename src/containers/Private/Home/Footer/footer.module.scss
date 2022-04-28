@@ -1,40 +1,61 @@
-@import "src/sources/styles/mixins";
-@import "src/sources/styles/variables";
+@import 'src/sources/styles/mixins';
+@import 'src/sources/styles/variables';
 
 .footer {
   margin-top: 96px;
   padding-bottom: 34px;
   text-align: center;
 
-  &Menu{
-    @include textStyle($family: $titleFont, $weight: 400, $size:16px, $height: 18px);
+  &Menu {
+    @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
     text-transform: uppercase;
     @include flex($align: center, $justify: center);
     margin-top: 80px;
     margin-bottom: 106px;
+  }
+}
+.blockMenu {
+  display: flex;
 
-    svg {
-      margin: 0 55px;
+  &Item {
+    position: relative;
+    width: 156px;
+    padding: 11px 0;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    span:hover {
+      opacity: 1;
     }
   }
 }
-.blockMenu{
-  display: flex;
-}
-.blockMenu p:first-child{
+.blockMenu p:first-child {
   margin-right: 60px;
 }
-//.footerBtn{
-//  @include textStyle($family: $titleFont, $weight: 400, $size:16px, $height: 18px);
-//  text-transform: uppercase;
-//  width: 156px;
-//  height: 40px;
-//  margin: 0 55px;
-//  border: 1px solid #FFFFFF;
-//  border-radius: 61px;
-//  background: transparent;
-//}
-.logoSizes{
+.footerBtn {
+  position: relative;
+  @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
+  text-transform: uppercase;
+  width: 156px;
+  height: 40px;
+  margin: 0 55px;
+  border: none;
+  border-radius: 61px;
+  background: transparent;
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.logoSizes {
   width: 215px;
   height: auto;
 }
@@ -42,6 +63,6 @@
 .footerBottom {
   display: flex;
   justify-content: space-between;
-  @include textStyle($family: $textFont, $weight: 400, $size:12px, $height: 16px);
-  color: #FFFFFF;
+  @include textStyle($family: $textFont, $weight: 400, $size: 12px, $height: 16px);
+  color: #ffffff;
 }

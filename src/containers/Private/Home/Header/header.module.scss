@@ -1,23 +1,25 @@
-@import "src/sources/styles/mixins";
-@import "src/sources/styles/variables";
+@import 'src/sources/styles/mixins';
+@import 'src/sources/styles/variables';
 
-.header{
+.header {
   @include flex($align: center, $justify: space-between);
-  margin: 0 44px;
+  max-width: 1348px;
+  margin: auto;
   padding-top: 24px;
 }
 .menu {
   display: flex;
 }
-.menuItem{
-  @include textStyle($family: $titleFont, $weight: 400, $size:16px, $height: 18px);
+.menuItem {
+  @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
   text-transform: uppercase;
 }
-.menuItem:not(:last-child){
+.menuItem:not(:last-child) {
   margin-right: 40px;
 }
-.btn{
-  @include textStyle($size:16px, $weight: 400, $family: $titleFont, $height: 18px);
+.btn {
+  position: relative;
+  @include textStyle($size: 16px, $weight: 400, $family: $titleFont, $height: 18px);
   text-transform: uppercase;
   width: 156px;
   height: 40px;
@@ -25,4 +27,9 @@
   border: none;
   border-radius: 61px;
   background-color: transparent;
+
+  > div {
+    position: absolute;
+    top: 0;
+  }
 }

@@ -6,21 +6,19 @@
 }
 
 .top {
-  display: flex;
   position: absolute;
-  top: -10px;
+  top: -21px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .sub {
-  display: flex;
 }
 
 .bot {
-  display: flex;
+  box-sizing: border-box;
   position: absolute;
-  bottom: -10px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
