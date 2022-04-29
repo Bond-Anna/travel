@@ -14,6 +14,7 @@
     margin-bottom: 106px;
   }
 }
+
 .blockMenu {
   display: flex;
 
@@ -23,22 +24,24 @@
     padding: 11px 0;
     margin-right: 25px;
 
-    span {
+    &::before {
+      content: '';
+      display: block;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: -9px;
+      width: 156px;
+      height: 56px;
+      background-image: url(../../../../sources/common/borderCallMe.svg);
       opacity: 0;
       transition: opacity 0.3s;
     }
 
-    span:hover {
+    &:hover::before {
       opacity: 1;
     }
   }
 }
-.lastEl {
-  margin-right: 0;
-}
+
 .footerBtn {
   position: relative;
   @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
@@ -50,12 +53,23 @@
   border-radius: 61px;
   background: transparent;
 
-  > div {
+  &::before {
+    content: '';
+    display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -9px;
+    width: 156px;
+    height: 56px;
+    background-image: url(../../../../sources/common/borderCallMe.svg);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover::before {
+    opacity: 1;
   }
 }
+
 .logoSizes {
   width: 215px;
   height: auto;

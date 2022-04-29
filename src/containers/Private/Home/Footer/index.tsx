@@ -1,60 +1,37 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
-import Logo from '../../../../sources/common/Logo'
-import CallMeDecor from '../../../../sources/common/callMeDecor'
-import st from './footer.module.scss'
+import Logo from 'sources/common/Logo'
+import styles from './styles.module.scss'
 
 const Footer: FC = () => {
   return (
-    <div className={st.footer}>
+    <div className={styles.footer}>
       <NavLink to="/">
-        <Logo style={st.logoSizes} />
+        <Logo style={styles.logoSizes} />
       </NavLink>
-
-      <div className={st.footerMenu}>
-        <div className={st.blockMenu}>
+      <div className={styles.footerMenu}>
+        <div className={styles.blockMenu}>
           <NavLink to="#">
-            <p className={st.blockMenuItem}>
-              Luxury packages
-              <span>
-                <CallMeDecor />
-              </span>
-            </p>
+            <p className={styles.blockMenuItem}>Luxury packages</p>
           </NavLink>
           <NavLink to="#">
-            <p className={st.blockMenuItem}>
-              Book with us
-              <span>
-                <CallMeDecor />
-              </span>
-            </p>
+            <p className={styles.blockMenuItem}>Book with us</p>
           </NavLink>
         </div>
-        <button type="button" className={st.footerBtn}>
+        <button type="button" className={styles.footerBtn}>
           Call Me Back
-          <CallMeDecor />
         </button>
-        <div className={st.blockMenu}>
+        <div className={styles.blockMenu}>
           <NavLink to="#">
-            <p className={st.blockMenuItem}>
-              Why Lux Trips
-              <span>
-                <CallMeDecor />
-              </span>
-            </p>
+            <p className={styles.blockMenuItem}>Why Lux Trips</p>
           </NavLink>
           <NavLink to="#">
-            <p className={classNames(st.blockMenuItem, st.lastEl)}>
-              Contact
-              <span>
-                <CallMeDecor />
-              </span>
-            </p>
+            <p className={classNames(styles.blockMenuItem, styles.lastEl)}>Contact</p>
           </NavLink>
         </div>
       </div>
-      <div className={st.footerBottom}>
+      <div className={styles.footerBottom}>
         <p>© 2021 All Rights Reserved | Luxtrips</p>
         <p>Company Site | Privacy Policy</p>
       </div>

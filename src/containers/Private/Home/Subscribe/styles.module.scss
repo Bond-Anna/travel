@@ -1,5 +1,5 @@
-@import "src/sources/styles/mixins";
-@import "src/sources/styles/variables";
+@import 'src/sources/styles/mixins';
+@import 'src/sources/styles/variables';
 
 .wrapper {
   position: relative;
@@ -24,7 +24,7 @@
   @include textStyle($family: $titleFont, $weight: 400, $size: 60px, $height: 58px);
   width: 520px;
   height: 212px;
-  color: #FFFFFF;
+  color: #ffffff;
 
   span {
     position: absolute;
@@ -40,18 +40,18 @@
 
   &Input {
     @include textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
-    color: #0C0B10;
+    color: #0c0b10;
     width: 486px;
     height: 55px;
     padding: 13px 30px;
     background: rgba(255, 255, 255, 0.14);
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     backdrop-filter: blur(20px);
     border-radius: 95px;
 
     &::placeholder {
       @include textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
-      color: #0C0B10;
+      color: #0c0b10;
     }
   }
 
@@ -61,19 +61,24 @@
     height: 55px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 74px;
     border: none;
     position: absolute;
     transform: translateX(-86px);
 
-    > div {
+    &::before {
+      content: '';
+      display: block;
       position: absolute;
-      top: -9px;
+      top: -26px;
       left: 50%;
       transform: translateX(-50%);
+      width: 280px;
+      height: 99px;
+      background-image: url(../../../../sources/common/whiteBorder.svg);
+      background-repeat: no-repeat;
     }
-
   }
 }
 

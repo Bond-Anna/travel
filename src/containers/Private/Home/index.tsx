@@ -3,15 +3,13 @@ import Header from './Header'
 import Card from './Card'
 import Subscribe from './Subscribe'
 import Footer from './Footer'
-//imgs
-import Img1 from '../../../sources/cardImgs/card1.png'
-import Img2 from '../../../sources/cardImgs/card2.png'
-import Img3 from '../../../sources/cardImgs/card3.png'
-import Img4 from '../../../sources/cardImgs/card4.png'
-import Img5 from '../../../sources/cardImgs/card5.png'
-import Img6 from '../../../sources/cardImgs/image79.png'
-//styles
-import st from './home.module.scss'
+import Img1 from 'sources/cardImgs/card1.png'
+import Img2 from 'sources/cardImgs/card2.png'
+import Img3 from 'sources/cardImgs/card3.png'
+import Img4 from 'sources/cardImgs/card4.png'
+import Img5 from 'sources/cardImgs/card5.png'
+import Img6 from 'sources/cardImgs/image79.png'
+import styles from './styles.module.scss'
 
 const Home: FC = () => {
   const data = [
@@ -55,9 +53,9 @@ const Home: FC = () => {
   return (
     <div>
       <Header />
-      <h1 className={st.title}>Book with us</h1>
-      <div className={st.container}>
-        <div className={st.cards}>
+      <h1 className={styles.title}>Book with us</h1>
+      <div className={styles.container}>
+        <div className={styles.cards}>
           {data.map(({ id, img, title, text }) => (
             <Card key={id} src={img} title={title} text={text} />
           ))}

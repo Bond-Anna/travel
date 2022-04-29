@@ -122,6 +122,7 @@ div {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 a {
@@ -131,4 +132,7 @@ a {
   &:hover {
     color: inherit;
   }
+}
+input {
+  outline: none;
 }
