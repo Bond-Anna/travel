@@ -15,7 +15,7 @@ import { Spin } from 'antd'
 //styles
 import BgTop from '../../sources/common/bg_top_inner.png'
 import BgFooter from '../../sources/common/bg_footer.png'
-import st from './app.module.scss'
+import st from './styles.module.scss'
 
 const App = () => {
   const [initialized, setInitialized] = useState<boolean>(false)
@@ -33,30 +33,29 @@ const App = () => {
   }, [])
 
   return (
-      <div className={st.wrapper}>
-        <Suspense fallback={<Spin size="large" />}>
-          <StoreContext.Provider value={store}>
-            {initialized ? (
-                <Router history={history}>
-                  <Switch>
-                    <PublicRoute restricted={true} component={SignIn} path="/login" exact />
-                    <PublicRoute restricted={true} component={SignUp} path="/register" exact />
-                    <PrivateRoute component={PrivatePages} path="/" />
-                  </Switch>
-                </Router>
-            ) : (
-                <Spin size="large" />
-            )}
-          </StoreContext.Provider>
-        </Suspense>
-          <div className={st.topImg}>
-              <img src={BgTop} alt=""/>
-          </div>
-          <div className={st.footerImg}>
-              <img src={BgFooter} alt=""/>
-          </div>
+    <div className={st.wrapper}>
+      <Suspense fallback={<Spin size="large" />}>
+        <StoreContext.Provider value={store}>
+          {initialized ? (
+            <Router history={history}>
+              <Switch>
+                <PublicRoute restricted={true} component={SignIn} path="/login" exact />
+                <PublicRoute restricted={true} component={SignUp} path="/register" exact />
+                <PrivateRoute component={PrivatePages} path="/" />
+              </Switch>
+            </Router>
+          ) : (
+            <Spin size="large" />
+          )}
+        </StoreContext.Provider>
+      </Suspense>
+      <div className={st.topImg}>
+        <img src={BgTop} alt="" />
       </div>
-
+      <div className={st.footerImg}>
+        <img src={BgFooter} alt="" />
+      </div>
+    </div>
   )
 }
 

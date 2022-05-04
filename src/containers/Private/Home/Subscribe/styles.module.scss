@@ -3,19 +3,21 @@
 
 .wrapper {
   position: relative;
-  width: 1110px;
+  max-width: 1110px;
   height: 565px;
   padding-top: 94px;
   padding-left: 185px;
   margin-top: 103px;
   background-repeat: no-repeat;
-  background-image: url(../../../../sources/subscribe/img.png);
+  background: url(../../../../sources/subscribe/img.png) center;
+  border-radius: 10px;
 }
 
 .frame {
   position: absolute;
   bottom: -22px;
-  left: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: -1;
 }
 
@@ -87,7 +89,7 @@
   top: 46px;
   left: 27px;
   z-index: -1;
-  width: 1055px;
+  max-width: 1055px;
   height: 537px;
   background-image: url(../../../../sources/subscribe/img.png);
   opacity: 0.78;
@@ -95,5 +97,43 @@
 
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    padding-top: 74px;
+    padding-left: 0;
+    text-align: center;
+  }
+  .title {
+    @include textStyle($family: $titleFont, $weight: 400, $size: 44px, $height: 44px);
+    width: 100%;
+    display: initial;
+
+    span {
+      @include textStyle($family: $textFont, $weight: 400, $size: 18px, $height: 24px);
+      position: initial;
+      width: 158px;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+  }
+
+  .subsForm {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+
+    &Input {
+      width: 100%;
+      text-align: center;
+    }
+    &Btn {
+      margin-top: 34px;
+      transform: translateX(0);
+      position: relative;
+      width: 100%;
+    }
   }
 }

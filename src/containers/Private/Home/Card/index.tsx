@@ -10,7 +10,7 @@ type Props = {
 const Card = ({ src, title, text }: Props) => {
   return (
     <div className={styles.cardBlock}>
-      <div className={styles.wrapper} style={{ background: `url(${src})` }}>
+      <div className={styles.wrapper} style={{ background: `url(${src}) center` }}>
         <div className={styles.rhomb}></div>
         <div className={styles.innerRhomb}></div>
         <p className={styles.cardTitle}>{title}</p>

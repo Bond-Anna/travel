@@ -46,8 +46,10 @@
   position: relative;
   @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
   text-transform: uppercase;
+  text-align: center;
   width: 156px;
   height: 40px;
+  padding: 0;
   margin-right: 25px;
   border: none;
   border-radius: 61px;
@@ -80,4 +82,44 @@
   justify-content: space-between;
   @include textStyle($family: $textFont, $weight: 400, $size: 12px, $height: 16px);
   color: #ffffff;
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    padding-bottom: 27px;
+  }
+  .logoSizes {
+    width: 109px;
+    height: auto;
+  }
+  .footerMenu {
+    flex-direction: column;
+    margin-top: 46px;
+    margin-bottom: 75px;
+  }
+  .footerBtn {
+    order: 0;
+    margin-right: 0;
+    margin-bottom: 54px;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+  .rightMenu {
+    order: 1;
+  }
+  .leftMenu {
+    order: 2;
+  }
+  .lastEl {
+    margin-right: 0;
+  }
+  .footerBottom {
+    flex-direction: column;
+
+    > p {
+      margin-bottom: 8px;
+    }
+  }
 }
