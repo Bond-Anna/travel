@@ -1,8 +1,8 @@
-@import 'src/sources/styles/mixins';
-@import 'src/sources/styles/variables';
+@use 'sources/styles/variables.scss' as *;
+@use 'sources/styles/mixins.scss' as mixin;
 
 .header {
-  @include flex($align: center, $justify: space-between);
+  @include mixin.flex($align: center, $justify: space-between);
   max-width: 1378px;
   margin: auto;
   padding: 0 15px;
@@ -19,7 +19,7 @@
 }
 
 .menuItem {
-  @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
+  @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
   text-transform: uppercase;
   padding: 10px 0;
 }
@@ -30,7 +30,7 @@
 
 .btn {
   position: relative;
-  @include textStyle($size: 16px, $weight: 400, $family: $titleFont, $height: 18px);
+  @include mixin.textStyle($size: 16px, $weight: 400, $family: $titleFont, $height: 18px);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   width: 156px;
@@ -96,7 +96,7 @@
     background-position: center;
   }
   .menuItem {
-    @include textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
+    @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
     text-transform: uppercase;
     padding: 0;
   }
@@ -130,7 +130,7 @@
   }
 
   .btn {
-    @include flex($align: center, $justify: center);
+    @include mixin.flex($align: center, $justify: center);
     width: 88px;
     height: 36px;
     border: 1px solid #fff;

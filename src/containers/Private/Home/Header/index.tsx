@@ -6,17 +6,15 @@ import Burger from 'sources/common/BurgerIcon'
 import styles from './styles.module.scss'
 
 const Header: React.FC = () => {
-  const [isActive, setIsActive] = useState(false)
-  console.log(isActive, 'isActive')
+  const [isActive, setIsActive] = useState<boolean>(false)
 
-  const onBurgerClick = () => {
+  const onBurgerClick = (): void => {
     setIsActive(!isActive)
   }
 
   useEffect(() => {
     if (isActive) {
-      // @ts-ignore
-      document.querySelector('body').style.overflowY = 'hidden'
+      document.querySelector('body')!.style.overflowY = 'hidden'
     } else {
       // @ts-ignore
       document.querySelector('body').style.overflowY = 'initial'

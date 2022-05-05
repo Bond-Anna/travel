@@ -33,10 +33,10 @@ const App = () => {
   }, [])
 
   return (
-    <div className={st.wrapper}>
-      <Suspense fallback={<Spin size="large" />}>
-        <StoreContext.Provider value={store}>
-          {initialized ? (
+    <Suspense fallback={<Spin size="large" />}>
+      <StoreContext.Provider value={store}>
+        {initialized ? (
+          <>
             <Router history={history}>
               <Switch>
                 <PublicRoute restricted={true} component={SignIn} path="/login" exact />
@@ -44,18 +44,18 @@ const App = () => {
                 <PrivateRoute component={PrivatePages} path="/" />
               </Switch>
             </Router>
-          ) : (
-            <Spin size="large" />
-          )}
-        </StoreContext.Provider>
-      </Suspense>
-      <div className={st.topImg}>
-        <img src={BgTop} alt="" />
-      </div>
-      <div className={st.footerImg}>
-        <img src={BgFooter} alt="" />
-      </div>
-    </div>
+            <div className={st.topImg}>
+              <img src={BgTop} alt="sky" />
+            </div>
+            <div className={st.footerImg}>
+              <img src={BgFooter} alt="nature" />
+            </div>
+          </>
+        ) : (
+          <Spin size="large" />
+        )}
+      </StoreContext.Provider>
+    </Suspense>
   )
 }
 

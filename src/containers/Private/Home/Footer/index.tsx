@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import cn from 'classnames'
 import Logo from 'sources/common/Logo'
@@ -10,27 +10,23 @@ const Footer: FC = () => {
       <NavLink to="/">
         <Logo style={styles.logoSizes} />
       </NavLink>
-      <div className={styles.footerMenu}>
-        <div className={cn(styles.blockMenu, styles.rightMenu)}>
-          <NavLink to="#">
-            <p className={styles.blockMenuItem}>Luxury packages</p>
-          </NavLink>
-          <NavLink to="#">
-            <p className={cn(styles.blockMenuItem, styles.lastEl)}>Book with us</p>
-          </NavLink>
-        </div>
-        <button type="button" className={styles.footerBtn}>
-          Call Me Back
-        </button>
-        <div className={cn(styles.blockMenu, styles.leftMenu)}>
-          <NavLink to="#">
-            <p className={styles.blockMenuItem}>Why Lux Trips</p>
-          </NavLink>
-          <NavLink to="#">
-            <p className={cn(styles.blockMenuItem, styles.lastEl)}>Contact</p>
-          </NavLink>
-        </div>
-      </div>
+      <ul className={styles.footerMenu}>
+        <li className={styles.blockMenuItem}>
+          <NavLink to="#">Luxury packages</NavLink>
+        </li>
+        <li className={styles.blockMenuItem}>
+          <NavLink to="#">Book with us</NavLink>
+        </li>
+        <li className={styles.footerBtn}>
+          <NavLink to="#">Call Me Back</NavLink>
+        </li>
+        <li className={styles.blockMenuItem}>
+          <NavLink to="#">Why Lux Trips</NavLink>
+        </li>
+        <li className={cn(styles.blockMenuItem, styles.lastEl)}>
+          <NavLink to="#">Contact</NavLink>
+        </li>
+      </ul>
       <div className={styles.footerBottom}>
         <p>© 2021 All Rights Reserved | Luxtrips</p>
         <p>Company Site | Privacy Policy</p>

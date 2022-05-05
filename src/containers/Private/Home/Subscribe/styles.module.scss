@@ -1,5 +1,5 @@
-@import 'src/sources/styles/mixins';
-@import 'src/sources/styles/variables';
+@use 'sources/styles/variables.scss' as *;
+@use 'sources/styles/mixins.scss' as mixin;
 
 .wrapper {
   position: relative;
@@ -23,7 +23,7 @@
 
 .title {
   position: relative;
-  @include textStyle($family: $titleFont, $weight: 400, $size: 60px, $height: 58px);
+  @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 60px, $height: 58px);
   width: 520px;
   height: 212px;
   color: #ffffff;
@@ -32,7 +32,7 @@
     position: absolute;
     display: flex;
     bottom: -9px;
-    @include textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
+    @include mixin.textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
   }
 }
 
@@ -41,7 +41,7 @@
   margin-top: 70px;
 
   &Input {
-    @include textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
+    @include mixin.textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
     color: #0c0b10;
     width: 486px;
     height: 55px;
@@ -52,13 +52,13 @@
     border-radius: 95px;
 
     &::placeholder {
-      @include textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
+      @include mixin.textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 29px);
       color: #0c0b10;
     }
   }
 
   &Btn {
-    @include textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
+    @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
     width: 330px;
     height: 55px;
     letter-spacing: 0.04em;
@@ -107,12 +107,12 @@
     text-align: center;
   }
   .title {
-    @include textStyle($family: $titleFont, $weight: 400, $size: 44px, $height: 44px);
+    @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 44px, $height: 44px);
     width: 100%;
     display: initial;
 
     span {
-      @include textStyle($family: $textFont, $weight: 400, $size: 18px, $height: 24px);
+      @include mixin.textStyle($family: $textFont, $weight: 400, $size: 18px, $height: 24px);
       position: initial;
       width: 158px;
       margin: 0 auto;

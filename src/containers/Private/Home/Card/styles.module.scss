@@ -1,8 +1,8 @@
-@import 'src/sources/styles/mixins';
-@import 'src/sources/styles/variables';
+@use 'sources/styles/variables.scss' as *;
+@use 'sources/styles/mixins.scss' as mixin;
 
 .cardBlock {
-  @include flex-direction($direction: column);
+  @include mixin.flex-direction($direction: column);
   align-items: center;
   min-width: 344px;
   max-width: 540px;
@@ -29,7 +29,6 @@
   transform: translate(-50%, -50%) rotate(45deg) skew(-18deg, -16deg) scale(1.3);
   border: 1px solid #79655e;
   box-sizing: border-box;
-  background-color: transpsrent;
 }
 .innerRhomb {
   width: 54px;
@@ -43,8 +42,8 @@
   backdrop-filter: blur(20px);
 }
 .cardTitle {
-  @include position-absolute-center;
-  @include textStyle($family: $titleFont, $weight: 400, $size: 44px, $height: 43.34px);
+  @include mixin.position-absolute-center;
+  @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 44px, $height: 43.34px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
@@ -52,7 +51,7 @@
 }
 
 .cardText {
-  @include textStyle($family: $textFont, $weight: 400, $size: 18px, $height: 36px);
+  @include mixin.textStyle($family: $textFont, $weight: 400, $size: 18px, $height: 36px);
   text-align: center;
   max-width: 410px;
   margin-top: 30px;
@@ -60,10 +59,10 @@
 
 .cardBtn {
   position: relative;
-  @include textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
+  @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 24px, $height: 26px);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  @include flex($align: center, $justify: center);
+  @include mixin.flex($align: center, $justify: center);
   width: 254px;
   height: 55px;
   margin-top: 42px;
@@ -89,7 +88,7 @@
     height: 448px;
   }
   .cardText {
-    @include textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 24px);
+    @include mixin.textStyle($family: $textFont, $weight: 400, $size: 16px, $height: 24px);
     margin: 25px 24px 0;
   }
   .cardBtn {

@@ -1,8 +1,8 @@
-@import 'src/sources/styles/mixins';
-@import 'src/sources/styles/variables';
+@use 'sources/styles/variables.scss' as *;
+@use 'sources/styles/mixins.scss' as mixin;
 
 .title {
-  @include textStyle($family: $titleFont, $weight: 400, $size: 60px, $height: 58px);
+  @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 60px, $height: 58px);
   text-align: center;
   margin-top: 15px;
   margin-bottom: 37px;
@@ -21,7 +21,7 @@
 
 @media (max-width: 768px) {
   .title {
-    @include textStyle($family: $titleFont, $weight: 400, $size: 40px, $height: 44px);
+    @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 40px, $height: 44px);
   }
   .cards {
     display: flex;

@@ -1,16 +1,18 @@
-import React from 'react'
+import { FC } from 'react'
 import styles from './styles.module.scss'
 
-type Props = {
+interface Props {
   src: any
   title: string
   text: string
 }
 
-const Card = ({ src, title, text }: Props) => {
+const Card: FC<Props> = ({ src, title, text }) => {
+  const background = `url(${src}) center`
+
   return (
     <div className={styles.cardBlock}>
-      <div className={styles.wrapper} style={{ background: `url(${src}) center` }}>
+      <div className={styles.wrapper} style={{ background: background }}>
         <div className={styles.rhomb}></div>
         <div className={styles.innerRhomb}></div>
         <p className={styles.cardTitle}>{title}</p>

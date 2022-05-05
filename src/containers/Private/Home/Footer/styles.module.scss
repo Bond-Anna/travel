@@ -1,5 +1,5 @@
-@import 'src/sources/styles/mixins';
-@import 'src/sources/styles/variables';
+@use 'sources/styles/variables.scss' as *;
+@use 'sources/styles/mixins.scss' as mixin;
 
 .footer {
   margin-top: 96px;
@@ -7,11 +7,15 @@
   text-align: center;
 
   &Menu {
-    @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
+    @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
     text-transform: uppercase;
-    @include flex($align: center, $justify: center);
+    @include mixin.flex($align: center, $justify: center);
     margin-top: 80px;
     margin-bottom: 106px;
+
+    :last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -44,12 +48,12 @@
 
 .footerBtn {
   position: relative;
-  @include textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
+  @include mixin.textStyle($family: $titleFont, $weight: 400, $size: 16px, $height: 18px);
   text-transform: uppercase;
   text-align: center;
   width: 156px;
   height: 40px;
-  padding: 0;
+  padding: 11px 0;
   margin-right: 25px;
   border: none;
   border-radius: 61px;
@@ -80,7 +84,7 @@
 .footerBottom {
   display: flex;
   justify-content: space-between;
-  @include textStyle($family: $textFont, $weight: 400, $size: 12px, $height: 16px);
+  @include mixin.textStyle($family: $textFont, $weight: 400, $size: 12px, $height: 16px);
   color: #ffffff;
 }
 
@@ -93,14 +97,22 @@
     height: auto;
   }
   .footerMenu {
-    flex-direction: column;
-    margin-top: 46px;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 142px;
     margin-bottom: 75px;
   }
-  .footerBtn {
-    order: 0;
+  .blockMenuItem {
+    flex: 50%;
     margin-right: 0;
-    margin-bottom: 54px;
+  }
+  .footerBtn {
+    position: absolute;
+    top: -94px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-right: 0;
+    margin-bottom: 0;
 
     &::before {
       opacity: 1;
