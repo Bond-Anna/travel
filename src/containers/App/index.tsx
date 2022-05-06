@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { Router, Switch } from 'react-router'
 import store, { StoreContext } from 'stores'
-
 //components
 import SignIn from 'containers/Public/SignIn'
 import SignUp from 'containers/Public/SignUp'

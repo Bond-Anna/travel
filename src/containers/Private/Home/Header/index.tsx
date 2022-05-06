@@ -28,9 +28,9 @@ const Header: React.FC = () => {
       </NavLink>
       <div className={cn(styles.menu, { [styles.mobile]: isActive })}>
         <div className={cn(styles.mobileHeader, { [styles.mobileActive]: isActive })}>
-          <button className={styles.btn}>
-            Call Me<span className={styles.btnText}> Back</span>
-          </button>
+          <NavLink to="/weather" className={styles.btn}>
+            Weather
+          </NavLink>
           <NavLink to="/" className={styles.logo}>
             <Logo />
           </NavLink>
@@ -61,9 +61,9 @@ const Header: React.FC = () => {
         </ul>
       </div>
 
-      <button className={styles.btn}>
-        Call Me<span className={styles.btnText}> Back</span>
-      </button>
+      <NavLink to="/weather" className={styles.btn}>
+        Weather<span className={styles.btnText}> here</span>
+      </NavLink>
       <span className={styles.burger} onClick={onBurgerClick}>
         <Burger />
       </span>

@@ -18,6 +18,44 @@
   grid-column-gap: 30px;
   grid-row-gap: 30px;
 }
+.topImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footerImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .topImg {
+    width: 1440px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footerImg {
+    width: 1440px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 @media (max-width: 768px) {
   .title {

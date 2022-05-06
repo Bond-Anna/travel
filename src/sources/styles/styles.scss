@@ -97,6 +97,26 @@
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Jost', sans-serif;
+  src: url('../fonts/Jost-Light.eot');
+  src: local('Jost Light'), local('Jost-Light'),
+    url('../fonts/Jost-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Light.woff') format('woff'),
+    url('../fonts/Jost-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Jost', sans-serif;
+  src: url('../fonts/Jost-Regular.eot');
+  src: local('Jost Regular'), local('Jost-Regular'),
+    url('../fonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Regular.woff') format('woff'),
+    url('../fonts/Jost-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 html,
 body {
@@ -131,6 +151,7 @@ div {
 button {
   cursor: pointer;
   border: none;
+  background-color: transparent;
 }
 
 a {
