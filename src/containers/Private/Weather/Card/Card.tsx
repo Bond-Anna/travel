@@ -25,7 +25,7 @@ export default function Card({ city, list }: { city: object; list: object }) {
       '{ x: el.dt_txt, y: el.main.tempC }'
     )
     // @ts-ignore
-    return { x: el.dt_txt, y: el.main.tempC }
+    return { x: el.dt_txt.slice(8, 11), y: el.main.tempC }
   })
   // @ts-ignore
   graphData[0].data = result
