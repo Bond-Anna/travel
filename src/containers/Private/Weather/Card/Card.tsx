@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import cn from 'classnames'
 import citys from '../store/citys'
 import Cross from 'sources/common/cross'
+import MyResponsiveLine from '../Graph'
 import styles from './styles.module.scss'
 
 export default function Card({ city, list }: { city: object; list: object }) {
@@ -15,6 +16,20 @@ export default function Card({ city, list }: { city: object; list: object }) {
   // @ts-ignore
   const iconS = list[0].weather[0].icon
   const link = `http://openweathermap.org/img/wn/${iconS}@2x.png`
+
+  const graphData: any[] = [{ id: 'japan', color: 'hsl(23, 70%, 50%)', data: [] }]
+  // @ts-ignore
+  const result = list.map((el: any): void => {
+    console.log(
+      { x: el.dt_txt.slice(8, 11), y: el.main.tempC },
+      '{ x: el.dt_txt, y: el.main.tempC }'
+    )
+    // @ts-ignore
+    return { x: el.dt_txt, y: el.main.tempC }
+  })
+  // @ts-ignore
+  graphData[0].data = result
+  console.log(graphData, 'graphData')
 
   const onBtnC = () => {
     setIsCel(true)
@@ -51,7 +66,10 @@ export default function Card({ city, list }: { city: object; list: object }) {
       <p className={styles.date}>
         {date}, {time}
       </p>
-      <div className={styles.graph}></div>
+      <div className={styles.graph}>
+        {/* @ts-ignore */}
+        <MyResponsiveLine data={graphData} />
+      </div>
       <div className={styles.bottomInfo}>
         <div>
           <div className={styles.bottomInfoTemperature}>
@@ -124,10 +142,8 @@ export default function Card({ city, list }: { city: object; list: object }) {
           </li>
         </ul>
       </div>
-      <Cross
-        // trigger={() => dispatch(delCity(data.id))}
-        className={styles.iconCross}
-      />
+      {/* @ts-ignore */}
+      <Cross trigger={() => citys.delCity(city.id)} className={styles.iconCross} />
     </div>
   )
 }

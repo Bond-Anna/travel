@@ -1,7 +1,7 @@
-export default function Cross({ className }) {
+export default function Cross({ trigger, className }) {
   return (
     <svg
-      // onClick={() => trigger && trigger()}
+      onClick={() => trigger && trigger()}
       className={className}
       width="18"
       height="18"

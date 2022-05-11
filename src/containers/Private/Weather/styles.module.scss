@@ -2,7 +2,7 @@
 @use 'sources/styles/mixins.scss' as mixin;
 
 .container {
-  width: 1970px;
+  max-width: 1970px;
   padding: 25px;
   background-color: #fff;
 }
@@ -14,7 +14,14 @@
     $size: $defaultFontSize,
     $height: 20px
   );
+  display: flex;
+  justify-content: center;
   margin: 120px 0;
+}
+
+.test {
+  width: 400px;
+  height: 300px;
 }
 
 :global {
@@ -68,4 +75,11 @@
     );
     padding: 0 5px;
   }
+}
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 25px;
+  width: fit-content;
 }

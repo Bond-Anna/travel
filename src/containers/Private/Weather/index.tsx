@@ -5,13 +5,17 @@ import { useState } from 'react'
 import { Button } from 'antd'
 import citys from './store/citys'
 import Card from './Card/Card'
+import MyResponsiveLine from './Graph'
 import styles from './styles.module.scss'
 
 const Weather: FC = observer(() => {
   const [name, setName] = useState<string>('')
+  const [autocomplete, setAutocomplete] = useState<object>({})
 
   const getWeather = (): void => {
     citys.getCityWeather(name)
+    // @ts-ignore
+    setAutocomplete((autocomplete.value = ''))
   }
 
   return (
@@ -20,7 +24,9 @@ const Weather: FC = observer(() => {
         <Autocomplete
           placeholder="City.."
           apiKey="AIzaSyA9bslaj5Bl5nLuQQXe8rr_PkhDvvZqzMs"
-          onPlaceSelected={place => {
+          onPlaceSelected={(place, autocomplete) => {
+            // @ts-ignore
+            setAutocomplete(autocomplete)
             setName(place.address_components[0].long_name)
           }}
         />
@@ -28,12 +34,16 @@ const Weather: FC = observer(() => {
           Add
         </Button>
       </div>
-      {/* @ts-ignore */}
-      {citys.citysData.map(({ city, list }) => (
-        // @ts-ignore
-        <Card key={city.id} city={city} list={list} />
-      ))}
-      <div></div>
+      {/* <div className={styles.test}>
+        <MyResponsiveLine />
+      </div> */}
+      <div className={styles.cardList}>
+        {/* @ts-ignore */}
+        {citys.citysData.map(({ city, list }) => (
+          // @ts-ignore
+          <Card key={city.id} city={city} list={list} />
+        ))}
+      </div>
     </div>
   )
 })
