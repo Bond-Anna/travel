@@ -1,35 +1,23 @@
 import { ResponsiveLine } from '@nivo/line'
-// import { linearGradientDef } from '@nivo/core'
 
-// const data = [
-//   {
-//     id: 'japan',
-//     color: 'hsl(23, 70%, 50%)',
-//     data: [
-//       {
-//         x: 'plane',
-//         y: 25,
-//       },
-//       {
-//         x: 'helicopter',
-//         y: 162,
-//       },
-//       {
-//         x: 'boat',
-//         y: 77,
-//       }
-//     ],
-//   },
-// ]
-const MyResponsiveLine = ({ data }) => (
+const MyResponsiveLine = ({ data, maxY, minY, colorA, colorB }) => (
   <ResponsiveLine
     data={data}
-    margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
-    xScale={{ type: 'linear' }}
-    yScale={{
+    margin={{ top: 10, right: 10, bottom: 22, left: 10 }}
+    xScale={{
       type: 'linear',
       min: 'auto',
       max: 'auto',
+      // type: 'time',
+      // format: '%Y-%m-%d',
+      // useUTC: false,
+      // precision: 'day',
+    }}
+    xFormat=" =-"
+    yScale={{
+      type: 'linear',
+      min: minY,
+      max: maxY + 5,
       stacked: true,
       reverse: false,
     }}
@@ -40,9 +28,9 @@ const MyResponsiveLine = ({ data }) => (
     axisBottom={{
       orient: 'bottom',
       tickSize: 0,
-      tickPadding: 5,
+      tickPadding: 10,
       tickRotation: 0,
-      legend: false,
+      tickValues: 6,
     }}
     axisLeft={null}
     enableGridX={false}
@@ -52,8 +40,8 @@ const MyResponsiveLine = ({ data }) => (
         id: 'gradientC',
         type: 'linearGradient',
         colors: [
-          { offset: 0, color: '#FFA25B' },
-          { offset: 100, color: '#FFF4F4' },
+          { offset: 0, color: colorA },
+          { offset: 100, color: colorB },
         ],
       },
     ]}
@@ -64,12 +52,11 @@ const MyResponsiveLine = ({ data }) => (
     pointBorderColor="black"
     enablePointLabel={true}
     pointLabel="y"
-    pointLabelYOffset={-10}
+    pointLabelYOffset={-5}
     enableArea={true}
     areaOpacity={0.3}
     crosshairType="top-left"
-    useMesh={true}
-    legends={[]}
+    isInteractive={false}
   />
 )
 export default MyResponsiveLine

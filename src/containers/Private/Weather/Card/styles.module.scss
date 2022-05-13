@@ -51,16 +51,16 @@
   @include mixin.textStyle($family: $weatherFont, $weight: 300, $size: 18px, $height: 26px);
   margin: 0;
   margin-top: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .graph {
-  height: 71px;
+  height: 85px;
 }
 
 .bottomInfo {
   @include mixin.flex($align: flex-end, $justify: space-between);
-  margin-top: 20px;
+  margin-top: 10px;
 
   &Temperature {
     display: flex;
